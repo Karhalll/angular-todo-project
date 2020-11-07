@@ -9,10 +9,21 @@ import { Task } from 'src/app/services/task-service.service';
 })
 export class TodoItemComponent implements OnInit {
 	@Input() task: Task;
+	editingMode: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
+	}
+	
+	editMode(state: boolean): void {
+		this.editingMode = state;
+	}
 
+	confirmChanges(title: string, project: string): void {
+		this.task.title = title;
+		this.task.project = project;
+
+		this.editMode(false);
+	}
 }
