@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+	font-family: Cambria;
+}
+
+.center {
+	display: flex;
+  justify-content: center;
+}
+
+.stretch {
+	justify-content: space-evenly;
+}
