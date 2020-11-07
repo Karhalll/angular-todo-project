@@ -7,7 +7,7 @@
 			<delet-icon class="icon" (click)="deleteTask()"></delet-icon>
 		</div>
 		<div *ngIf="task.done" class="centred"><button (click)="isCompleted(false)">Completed</button></div>
-		<div *ngIf="!task.done" class="centred"><button (click)="isCompleted(true)">Complete</button></div>
+		<div *ngIf="!task.done" class="centred"><button (click)="isCompleted(true)">Pending</button></div>
 	</div>
 	<div *ngIf="editingMode" class="edit">
 		<label>Title:</label>
