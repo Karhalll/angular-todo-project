@@ -1,1 +1,10 @@
-<p>todo-list works!</p>
+<div>
+	<div *ngFor="let task of todos">
+		<h1>{{task.title}}</h1>
+		<p>{{task.project}}</p>
+		<div *ngIf="task.done"><button>Completed</button></div>
+		<div *ngIf="!task.done"><button>Complete</button></div>
+		<button>Edit</button>
+		<button>Delete</button>
+	</div>
+</div>
