@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="!editingMode">
 	<h1>{{task.title}}</h1>
 	<p>{{task.project}}</p>
 	<div *ngIf="task.done"><button>Completed</button></div>
