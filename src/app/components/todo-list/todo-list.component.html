@@ -1,5 +1,7 @@
 <div>
 	<div *ngFor="let task of todos">
-		<app-todo-item [task]="task"></app-todo-item>
+		<div *ngIf="!task.deleted">
+			<app-todo-item [task]="task"></app-todo-item>
+		</div>
 	</div>
 </div>

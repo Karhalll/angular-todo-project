@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
 export interface Task {
-	id: number,
 	title: string;
 	project: string;
 	done: boolean;
+	deleted: boolean;
 	details?: string;
 }
 
@@ -14,24 +14,24 @@ export interface Task {
 export class TaskService {
 	todos: Task[] = [
 		{
-			id: 1,
 			title: 'Todo A',
 			project: 'Project A',
 			done: false,
+			deleted: false,
 			details: 'First project needs to ...'
 		},
 		{
-			id: 2,
 			title: 'Todo B',
 			project: 'Project B',
 			done: true,
+			deleted: false,
 			details: 'Second project needs to ...'
 		},
 		{
-			id: 3,
 			title: 'Todo C',
 			project: 'Project C',
 			done: false,
+			deleted: false,
 			details: 'Third project needs to ...'
 		}
 	]
