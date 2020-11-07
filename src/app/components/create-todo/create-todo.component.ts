@@ -6,7 +6,7 @@ import { Task, TaskService } from 'src/app/services/task-service.service';
 @Component({
   selector: 'app-create-todo',
   templateUrl: './create-todo.component.html',
-  styleUrls: ['./create-todo.component.css']
+  styleUrls: ['./create-todo.component.scss']
 })
 export class CreateTodoComponent implements OnInit {
 	taskForm: FormGroup;
