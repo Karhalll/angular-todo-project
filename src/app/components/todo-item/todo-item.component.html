@@ -1,17 +1,15 @@
 <div *ngIf="!editingMode">
 	<h1>{{task.title}}</h1>
 	<p>{{task.project}}</p>
-	<div *ngIf="task.done"><button>Completed</button></div>
-	<div *ngIf="!task.done"><button>Complete</button></div>
+	<div *ngIf="task.done"><button (click)="isCompleted(false)">Completed</button></div>
+	<div *ngIf="!task.done"><button (click)="isCompleted(true)">Complete</button></div>
 	<button (click)="editMode(true)">Edit</button>
 	<button (click)="deleteTask()">Delete</button>
 </div>
 <div *ngIf="editingMode">
 	<label>Title:</label>
 	<input [ngModel]="task.title" #title>
-
 	<label>Project:</label>
 	<input [ngModel]="task.project" #projec>
-
 	<button ngModel (click)="confirmChanges(title.value, projec.value)">Confirm</button>
 </div>

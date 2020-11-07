@@ -1,0 +1,9 @@
+<div>
+	<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+		<label>Title:</label>
+		<input type="text" formControlName="title">
+		<label>Project:</label>
+		<input type="text" formControlName="project">
+		<input type="submit" value="Create">
+	</form>
+</div>

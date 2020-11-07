@@ -27,6 +27,10 @@ export class TodoItemComponent implements OnInit {
 		this.editMode(false);
 	}
 
+	isCompleted(state: boolean) {
+		this.task.done = state;
+	}
+
 	deleteTask(): void {
 		this.task.deleted = true;
 	}
