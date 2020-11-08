@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { Task, TaskService } from 'src/app/services/task-service.service';
 
@@ -13,7 +14,8 @@ export class CreateTodoComponent implements OnInit {
 
   constructor(
 		private _taskService: TaskService,
-		private _formBuilder: FormBuilder
+		private _formBuilder: FormBuilder,
+		private _router: Router
 		) {
 		this.taskForm = this._formBuilder.group({
 			title: '',
@@ -31,5 +33,6 @@ export class CreateTodoComponent implements OnInit {
 		this._taskService.addTask(newTask);
 
 		this.taskForm.reset();
+		this._router.navigate(['/todoList']);
 	}
 }

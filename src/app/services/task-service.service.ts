@@ -39,6 +39,6 @@ export class TaskService {
 	constructor() {}
 
 	addTask(taskToAdd: Task) {
-		this.todos.push(taskToAdd);
+		this.todos.unshift(taskToAdd);
 	}
 }
