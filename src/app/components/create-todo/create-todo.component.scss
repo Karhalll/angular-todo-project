@@ -1,0 +1,9 @@
+form {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+form > * {
+  margin-top: 0.3em;
+}
