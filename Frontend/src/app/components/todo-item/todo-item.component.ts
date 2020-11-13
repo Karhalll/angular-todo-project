@@ -7,27 +7,22 @@ import { Task } from 'src/app/services/task-service.service';
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.scss']
 })
-export class TodoItemComponent implements OnInit {
+export class TodoItemComponent {
 	@Input() task: Task;
-	editingMode: boolean = false;
-
-  constructor() { }
-
-  ngOnInit(): void {
-	}
+	editMode: boolean = false;
 	
-	editMode(state: boolean): void {
-		this.editingMode = state;
+	setEditMode(state: boolean): void {
+		this.editMode = state;
 	}
 
 	confirmChanges(title: string, project: string): void {
 		this.task.title = title;
 		this.task.project = project;
 
-		this.editMode(false);
+		this.setEditMode(false);
 	}
 
-	isCompleted(state: boolean) {
+	setCompleted(state: boolean) {
 		this.task.done = state;
 	}
 
