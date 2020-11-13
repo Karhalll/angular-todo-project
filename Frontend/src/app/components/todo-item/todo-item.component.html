@@ -3,8 +3,8 @@
 		<h1>{{task.title}}</h1>
 		<p>{{task.project}}</p>
 		<div class="icons">
-			<edit-icon class="icon" (click)="editMode(true)"></edit-icon>
-			<delet-icon class="icon" (click)="deleteTask()"></delet-icon>
+			<mat-icon class="icon" (click)="editMode(true)">edit</mat-icon>
+			<mat-icon class="icon" (click)="deleteTask()">delete</mat-icon>
 		</div>
 		<div *ngIf="task.done" class="centred"><button (click)="isCompleted(false)">Completed</button></div>
 		<div *ngIf="!task.done" class="centred"><button (click)="isCompleted(true)">Pending</button></div>

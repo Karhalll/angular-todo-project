@@ -9,7 +9,7 @@ import { Task, TaskService } from 'src/app/services/task-service.service';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
-	@Input() todos: Task[];
+	todos: Task[];
 
   constructor(private _taskService: TaskService) { }
 
