@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { CreateTodoComponent } from './components/create-todo/create-todo.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,8 @@ import { CreateTodoComponent } from './components/create-todo/create-todo.compon
 		AppRoutingModule,
 		ReactiveFormsModule,
 		MatIconModule,
-		HttpClientModule
+		HttpClientModule,
+		BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
