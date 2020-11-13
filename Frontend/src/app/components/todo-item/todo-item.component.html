@@ -1,15 +1,15 @@
 <div class="border">
-	<div *ngIf="!editingMode" class="inner-items">
+	<div *ngIf="!editMode" class="inner-items">
 		<h1>{{task.title}}</h1>
 		<p>{{task.project}}</p>
 		<div class="icons">
-			<mat-icon class="icon" (click)="editMode(true)">edit</mat-icon>
+			<mat-icon class="icon" (click)="setEditMode(true)">edit</mat-icon>
 			<mat-icon class="icon" (click)="deleteTask()">delete</mat-icon>
 		</div>
-		<div *ngIf="task.done" class="centred"><button (click)="isCompleted(false)">Completed</button></div>
-		<div *ngIf="!task.done" class="centred"><button (click)="isCompleted(true)">Pending</button></div>
+		<div *ngIf="task.done" class="centred"><button (click)="setCompleted(false)">Completed</button></div>
+		<div *ngIf="!task.done" class="centred"><button (click)="setCompleted(true)">Pending</button></div>
 	</div>
-	<div *ngIf="editingMode" class="edit">
+	<div *ngIf="editMode" class="edit">
 		<label>Title:</label>
 		<input [ngModel]="task.title" #title>
 		<label>Project:</label>
