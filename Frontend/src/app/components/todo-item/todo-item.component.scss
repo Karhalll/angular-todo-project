@@ -1,3 +1,5 @@
+@use '../../../config';
+
 .inner-items {
 	display: flex;
 	flex-flow: column wrap;
@@ -19,7 +21,7 @@ p {
 }
 
 .icon {
-	color: rgb(187, 187, 187);
+	color: config.$icongray;
 }
 
 .icon:hover {

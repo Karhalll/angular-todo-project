@@ -9,8 +9,6 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { CreateTodoComponent } from './components/create-todo/create-todo.component';
-import { EditIconComponent } from './components/icons/edit-icon/edit-icon.component';
-import { DeletIconComponent } from './components/icons/delet-icon/delet-icon.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +16,6 @@ import { DeletIconComponent } from './components/icons/delet-icon/delet-icon.com
     TodoListComponent,
     TodoItemComponent,
 		CreateTodoComponent,
-		EditIconComponent,
-		DeletIconComponent,
   ],
   imports: [
 		BrowserModule,
