@@ -1,4 +1,4 @@
-<div *ngFor="let task of todos">
+<div *ngFor="let task of _taskService.getTasks()">
 	<div *ngIf="!task.deleted">
 		<app-todo-item [task]="task"></app-todo-item>
 	</div>

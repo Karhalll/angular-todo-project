@@ -1,5 +1,4 @@
-import { Input } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/core';
 
 import { Task, TaskService } from 'src/app/services/task-service.service';
 
@@ -8,12 +7,7 @@ import { Task, TaskService } from 'src/app/services/task-service.service';
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
-export class TodoListComponent implements OnInit {
-	todos: Task[];
+export class TodoListComponent {
 
-  constructor(private _taskService: TaskService) { }
-
-  ngOnInit(): void {
-		this.todos = this._taskService.todos;
-	}
+	constructor(public _taskService: TaskService) {}
 }

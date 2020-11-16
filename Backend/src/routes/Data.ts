@@ -2,9 +2,10 @@ import StatusCodes from 'http-status-codes';
 import { Request, Response, Router } from 'express';
 
 const router = Router();
-const { BAD_REQUEST, CREATED, OK } = StatusCodes;
+const { OK } = StatusCodes;
 
 interface Task {
+	id: number;
 	title: string;
 	project: string;
 	done: boolean;
@@ -14,6 +15,7 @@ interface Task {
 
 let todos: Task[] = [
 	{
+		id: 1,
 		title: 'Todo A',
 		project: 'Project A',
 		done: false,
@@ -21,6 +23,7 @@ let todos: Task[] = [
 		details: 'First project needs to ...'
 	},
 	{
+		id: 2,
 		title: 'Todo B',
 		project: 'Project B',
 		done: true,
@@ -28,6 +31,7 @@ let todos: Task[] = [
 		details: 'Second project needs to ...'
 	},
 	{
+		id: 3,
 		title: 'Todo C',
 		project: 'Project C',
 		done: false,
@@ -37,7 +41,7 @@ let todos: Task[] = [
 ]
 
 /******************************************************************************
- *                      Get All Users - "GET /api/users/all"
+ *                      Get All Tasks - "GET /api/data/all"
  ******************************************************************************/
 
 router.get('/all', async (req: Request, res: Response) => {

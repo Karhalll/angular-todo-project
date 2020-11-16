@@ -10,6 +10,8 @@ import 'express-async-errors';
 import BaseRouter from './routes';
 import logger from '@shared/Logger';
 
+import cors from 'cors';
+
 const app = express();
 const { BAD_REQUEST } = StatusCodes;
 
@@ -19,6 +21,7 @@ const { BAD_REQUEST } = StatusCodes;
  *                              Set basic express settings
  ***********************************************************************************/
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());

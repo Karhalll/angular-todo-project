@@ -1,6 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 export interface Task {
+	id: number;
 	title: string;
 	project: string;
 	done: boolean;
@@ -8,37 +11,34 @@ export interface Task {
 	details?: string;
 }
 
+interface TasksResponse {
+	todos: Task[];
+}
+
 @Injectable({
 	providedIn: 'root'
 })
 export class TaskService {
-	todos: Task[] = [
-		{
-			title: 'Todo A',
-			project: 'Project A',
-			done: false,
-			deleted: false,
-			details: 'First project needs to ...'
-		},
-		{
-			title: 'Todo B',
-			project: 'Project B',
-			done: true,
-			deleted: false,
-			details: 'Second project needs to ...'
-		},
-		{
-			title: 'Todo C',
-			project: 'Project C',
-			done: false,
-			deleted: false,
-			details: 'Third project needs to ...'
-		}
-	]
+	private todos: Task[];
+	private apiPath: string = 'http://localhost:3000/api/data'
 
-	constructor() {}
+	constructor(private _httpClient: HttpClient) {
+		this._getTasks().subscribe(response => {
+			this.todos = response.todos;
+			console.log(response);
+			console.log(this.todos);
+		});
+	}
 
-	addTask(taskToAdd: Task) {
+	private _getTasks(): Observable<TasksResponse> {
+		return this._httpClient.get(this.apiPath + '/all') as Observable<TasksResponse>;
+	}
+
+	public getTasks(): Task[] {
+		return this.todos;
+	}
+
+	public addTask(taskToAdd: Task): void {
 		this.todos.unshift(taskToAdd);
 	}
 }
