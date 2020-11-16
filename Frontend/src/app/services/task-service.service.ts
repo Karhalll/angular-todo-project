@@ -25,8 +25,6 @@ export class TaskService {
 	constructor(private _httpClient: HttpClient) {
 		this._getTasks().subscribe(response => {
 			this.todos = response.todos;
-			console.log(response);
-			console.log(this.todos);
 		});
 	}
 

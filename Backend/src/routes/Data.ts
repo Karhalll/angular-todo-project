@@ -41,11 +41,17 @@ let todos: Task[] = [
 ]
 
 /******************************************************************************
- *                      Get All Tasks - "GET /api/data/all"
+ *                      Data - "/api/data"
  ******************************************************************************/
 
 router.get('/all', async (req: Request, res: Response) => {
-    return res.status(OK).json({todos});
+  return res.status(OK).json({todos});
+});
+
+router.post('/edit/:id', async (req: Request, res: Response) => {
+	const id = req.params;
+	console.log(id);
+	return res.status(OK).json({todos});
 });
 
 export default router;
